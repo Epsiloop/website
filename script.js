@@ -31,12 +31,13 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
   const n=e.target.querySelector('[data-count]');
   if(n){const to=+n.dataset.count,t0=performance.now();
     (function f(t){const k=Math.min(1,(t-t0)/1400);n.textContent=(to*(1-Math.pow(1-k,3))).toFixed(to%1?2:0);if(k<1)requestAnimationFrame(f)})(t0)}
-}),{threshold:.2});
+}),{threshold:.05});
 document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 
 // 3D tilt + spotlight on cards
 document.querySelectorAll('.tilt').forEach(card=>{
   card.addEventListener('pointermove',e=>{
+    if(e.pointerType!=='mouse')return;
     const r=card.getBoundingClientRect(),px=(e.clientX-r.left)/r.width,py=(e.clientY-r.top)/r.height;
     card.style.transform=`perspective(800px) rotateX(${(.5-py)*8}deg) rotateY(${(px-.5)*8}deg)`;
     card.style.setProperty('--mx',px*100+'%');card.style.setProperty('--my',py*100+'%');

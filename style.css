@@ -33,8 +33,9 @@ h1{font-size:clamp(2.8rem,8vw,6.5rem);line-height:1.02;font-weight:700;letter-sp
 h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:40px}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
 .card{position:relative;display:block;padding:34px;border-radius:24px;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(10px);
-  color:var(--text);text-decoration:none;transition:border-color .3s,transform .15s ease-out;transform-style:preserve-3d;overflow:hidden}
+  color:var(--text);text-decoration:none;transition:border-color .3s,transform .15s ease-out,opacity .8s;transform-style:preserve-3d;overflow:hidden}
 .card::before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,0%),rgba(255,90,122,.18),transparent 70%);opacity:0;transition:opacity .3s}
+.card.reveal:not(.in){transform:translateY(30px)}
 .card:hover{border-color:var(--burg-2)}.card:hover::before{opacity:1}
 .tag{font-size:.75rem;color:var(--pink);letter-spacing:.08em}
 .card h3{font-size:1.9rem;margin:10px 0}
@@ -48,7 +49,7 @@ h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:40px}
 footer{text-align:center;color:var(--mute);padding:40px 20px;border-top:1px solid var(--line);font-size:.9rem}
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
-@media(max-width:600px){.nav nav a:not(.btn){display:none}.scroll{display:none}}
+@media(max-width:600px){.nav nav>a:not(.btn){display:none}.scroll{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 
 /* --- apps menu + product icons --- */
@@ -64,4 +65,12 @@ footer{text-align:center;color:var(--mute);padding:40px 20px;border-top:1px soli
 .apps-menu a:hover{background:rgba(255,255,255,.07)}
 .apps-menu img,.card .app-ico{width:56px;height:56px;border-radius:50%;display:block}
 .card .app-ico{width:64px;height:64px;border-radius:50%;margin-bottom:16px}
-@media(max-width:600px){.apps-menu{position:fixed;right:5vw;left:5vw;width:auto;top:64px}}
+@media(max-width:600px){
+  .nav{padding:10px 5vw}
+  .brand{font-size:1.1rem}.brand img{width:28px;height:28px}
+  .nav nav{gap:10px}
+  .apps{position:static}
+  .apps-menu{position:absolute;left:5vw;right:5vw;width:auto;top:calc(100% + 8px)}
+  .section{padding:80px 5vw}
+  .card{padding:26px}
+}
