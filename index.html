@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Epsiloop — Small steps, endless progress</title>
+<meta name="description" content="Epsiloop builds products that turn small steps into endless progress.">
+<meta name="theme-color" content="#800020">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="brand" href="#top"><img src="logo.svg" alt="" width="34" height="34"><span>epsiloop</span></a>
+  <nav>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact" class="btn small">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow reveal">epsiloop.io</p>
+    <h1 class="reveal">Small steps,<br><span class="grad">endless progress.</span></h1>
+    <p class="lead reveal">We build products that make tiny daily gains compound into something remarkable.</p>
+    <div class="cta reveal">
+      <a href="#products" class="btn">Explore products</a>
+      <a href="#about" class="btn ghost">Our idea</a>
+    </div>
+    <div class="scroll" aria-hidden="true"></div>
+  </section>
+
+  <section id="products" class="section">
+    <h2 class="reveal">Our products</h2>
+    <div class="cards">
+      <a class="card tilt reveal" href="https://motivaction.epsiloop.io">
+        <span class="tag">motivaction.epsiloop.io</span>
+        <h3>Motivaction</h3>
+        <p>Turn motivation into action. Build habits one small step at a time and watch your streaks grow.</p>
+        <span class="arrow">Visit →</span>
+      </a>
+      <a class="card tilt reveal" href="https://safe.epsiloop.io">
+        <span class="tag">safe.epsiloop.io</span>
+        <h3>Safe</h3>
+        <p>Protect what matters. Simple, private and secure by design.</p>
+        <span class="arrow">Visit →</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h2 class="reveal">The idea behind the name</h2>
+    <p class="about reveal">In mathematics, <em>epsilon</em> (ε) is the smallest step. A <em>loop</em> repeats it forever. Epsiloop is that idea as a company: tiny improvements, repeated, become unstoppable progress.</p>
+    <div class="stats">
+      <div class="reveal"><b data-count="1.01">0</b><small>1% better, daily</small></div>
+      <div class="reveal"><b data-count="37.8">0</b><small>x in a year (1.01<sup>365</sup>)</small></div>
+      <div class="reveal"><b>∞</b><small>loops ahead</small></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section center">
+    <h2 class="reveal">Let's take the first step</h2>
+    <a class="btn reveal" href="mailto:hello@epsiloop.io">hello@epsiloop.io</a>
+  </section>
+</main>
+
+<footer>© <span id="y"></span> Epsiloop · Small steps, endless progress.</footer>
+<script src="script.js"></script>
+</body>
+</html>

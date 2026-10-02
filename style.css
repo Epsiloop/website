@@ -1,0 +1,52 @@
+:root{--bg:#0d0508;--burg:#800020;--burg-2:#a3153a;--pink:#ff5a7a;--text:#f6eef0;--mute:#b7a3a9;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.1)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 17px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+#bg{position:fixed;inset:0;z-index:-2;width:100%;height:100%}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:-1;left:0;top:0;
+  background:radial-gradient(circle,rgba(128,0,32,.55),transparent 65%);transform:translate(-50%,-50%);filter:blur(30px)}
+h1,h2,h3,.brand{font-family:"Space Grotesk",sans-serif}
+.nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:14px 5vw;
+  backdrop-filter:blur(14px);background:rgba(13,5,8,.55);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:1.25rem;letter-spacing:.02em}
+.nav nav{display:flex;align-items:center;gap:24px}
+.nav nav a{color:var(--mute);text-decoration:none;font-size:.95rem;transition:color .2s}
+.nav nav a:hover{color:var(--text)}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;background:linear-gradient(135deg,var(--burg-2),var(--burg));color:#fff!important;
+  text-decoration:none;font-weight:500;box-shadow:0 8px 30px rgba(128,0,32,.45);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(163,21,58,.65)}
+.btn.small{padding:8px 18px}
+.btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none}
+.btn.ghost:hover{border-color:var(--pink)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 6vw 60px;max-width:1100px;margin:auto}
+.eyebrow{color:var(--pink);letter-spacing:.3em;text-transform:uppercase;font-size:.8rem;margin-bottom:20px}
+h1{font-size:clamp(2.8rem,8vw,6.5rem);line-height:1.02;font-weight:700;letter-spacing:-.03em}
+.grad{background:linear-gradient(100deg,var(--pink),var(--burg-2) 50%,#ffb3c1);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.lead{max-width:560px;color:var(--mute);margin:28px 0 36px;font-size:1.2rem}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.scroll{position:absolute;bottom:28px;left:50%;width:22px;height:36px;border:2px solid var(--line);border-radius:12px}
+.scroll::after{content:"";position:absolute;left:50%;top:6px;width:3px;height:7px;margin-left:-1.5px;background:var(--pink);border-radius:2px;animation:wheel 1.6s infinite}
+@keyframes wheel{to{transform:translateY(12px);opacity:0}}
+.section{max-width:1100px;margin:auto;padding:110px 6vw}
+.section.center{text-align:center}
+h2{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.02em;margin-bottom:40px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.card{position:relative;display:block;padding:34px;border-radius:24px;border:1px solid var(--line);background:var(--card);backdrop-filter:blur(10px);
+  color:var(--text);text-decoration:none;transition:border-color .3s,transform .15s ease-out;transform-style:preserve-3d;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,0%),rgba(255,90,122,.18),transparent 70%);opacity:0;transition:opacity .3s}
+.card:hover{border-color:var(--burg-2)}.card:hover::before{opacity:1}
+.tag{font-size:.75rem;color:var(--pink);letter-spacing:.08em}
+.card h3{font-size:1.9rem;margin:10px 0}
+.card p{color:var(--mute)}
+.arrow{display:inline-block;margin-top:22px;color:var(--pink)}
+.about{font-size:1.35rem;max-width:760px;color:var(--mute)}
+.about em{color:var(--text);font-style:normal;border-bottom:2px solid var(--burg-2)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-top:60px}
+.stats b{display:block;font:700 3.2rem "Space Grotesk",sans-serif;color:var(--pink)}
+.stats small{color:var(--mute)}
+footer{text-align:center;color:var(--mute);padding:40px 20px;border-top:1px solid var(--line);font-size:.9rem}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:600px){.nav nav a:not(.btn){display:none}.scroll{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
