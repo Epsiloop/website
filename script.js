@@ -44,3 +44,10 @@ document.querySelectorAll('.tilt').forEach(card=>{
   card.addEventListener('pointerleave',()=>card.style.transform='');
 });
 document.getElementById('y').textContent=new Date().getFullYear();
+
+// Apps menu
+const ab=document.querySelector('.apps-btn'),am=document.querySelector('.apps-menu');
+const setApps=o=>{am.classList.toggle('open',o);ab.setAttribute('aria-expanded',o)};
+ab.addEventListener('click',e=>{e.stopPropagation();setApps(!am.classList.contains('open'))});
+addEventListener('click',e=>{if(!am.contains(e.target))setApps(false)});
+addEventListener('keydown',e=>{if(e.key==='Escape')setApps(false)});
