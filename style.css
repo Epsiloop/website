@@ -74,3 +74,16 @@ footer{text-align:center;color:var(--mute);padding:40px 20px;border-top:1px soli
   .section{padding:80px 5vw}
   .card{padding:26px}
 }
+
+/* Social links */
+.social-wrap{margin-bottom:26px}
+.social-title{font-family:"Space Grotesk",sans-serif;font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--pink,var(--ep-accent,#ff5a7a));margin-bottom:14px}
+.social{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.social a{--c:#ff5a7a;display:inline-flex;align-items:center;gap:8px;padding:9px 16px 9px 12px;border-radius:999px;color:var(--text,var(--ep-text,#f6eef0))!important;text-decoration:none;font-size:.88rem;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(8px);transition:transform .25s,border-color .25s,box-shadow .25s,background .25s}
+.social a svg{width:20px;height:20px;transition:color .25s,transform .25s}
+.social a:hover,.social a:focus-visible{transform:translateY(-3px);border-color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);box-shadow:0 8px 26px color-mix(in srgb,var(--c) 40%,transparent)}
+.social a:hover svg{color:var(--c);transform:scale(1.15) rotate(-6deg)}
+@media(max-width:520px){.social a span{display:none}.social a{padding:11px}.social a svg{width:22px;height:22px}}
+.social.big{margin-top:30px}.social.big a{padding:14px 22px 14px 16px;font-size:1rem}.social.big a svg{width:24px;height:24px}
+.section.center .about{margin:12px auto 0}
